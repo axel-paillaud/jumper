@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://c52vplu55r8gt"]
+
+[ext_resource type="Texture2D" uid="uid://pqmjdsngld1x" path="res://art/sprites/Players/bunny1_jump.png" id="1_3hv2t"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cuhcn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3hv2t")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}]
+
+[node name="Player" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_cuhcn")
+animation = &"jump"
