@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://2oj53ky6qmlc"]
+
+[ext_resource type="PackedScene" uid="uid://b6uuq1yhhoyl3" path="res://terrain/grass/ground_grass.tscn" id="1_lh4ci"]
+[ext_resource type="PackedScene" uid="uid://c52vplu55r8gt" path="res://player/player.tscn" id="2_0cgrb"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="GroundGrass" parent="." instance=ExtResource("1_lh4ci")]
+position = Vector2(237, 655)
+
+[node name="Player" parent="." instance=ExtResource("2_0cgrb")]
+position = Vector2(237, 76)
+
+[connection signal="hit" from="Player" to="GroundGrass" method="_on_player_hit"]

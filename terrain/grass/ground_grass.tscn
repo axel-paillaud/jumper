@@ -1,14 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6uuq1yhhoyl3"]
+[gd_scene load_steps=4 format=3 uid="uid://b6uuq1yhhoyl3"]
 
 [ext_resource type="Texture2D" uid="uid://cc2pa2tqscna4" path="res://art/sprites/Environment/ground_grass.png" id="1_flja6"]
+[ext_resource type="Script" path="res://terrain/grass/ground_grass.gd" id="1_xdg5p"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ekpfg"]
-distance = 12.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q0lsb"]
+size = Vector2(378, 41)
 
 [node name="GroundGrass" type="StaticBody2D"]
+script = ExtResource("1_xdg5p")
+metadata/_edit_group_ = true
 
 [node name="GroundGrass" type="Sprite2D" parent="."]
 texture = ExtResource("1_flja6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("WorldBoundaryShape2D_ekpfg")
+position = Vector2(0, -26.5)
+shape = SubResource("RectangleShape2D_q0lsb")
